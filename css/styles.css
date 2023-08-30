@@ -109,6 +109,10 @@ button {
   padding-bottom: 32px;
 }
 
+.nav-menu-item .current {
+  color: var(--iris);
+}
+
 .nav-menu-links {
   position: relative;
 }
@@ -116,6 +120,11 @@ button {
 /* Adjusted selector to target the anchor inside .nav-menu-item */
 .nav-menu-item .nav-menu-links:hover::after {
   width: 100%; /* Expand the width to 100% on hover */
+  opacity: 1;
+}
+
+/* Adjusted selector to target the anchor inside .nav-menu-item */
+.nav-menu-item .current::after {
   opacity: 1;
 }
 
