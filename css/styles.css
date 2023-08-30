@@ -7,7 +7,10 @@
   --cornflower: #e7e9fc;
   --grey: rgba(46, 47, 66, 0.70);
   --iconcolor: #afb1b8;
-  --green: #31d0aa
+  --green: #31d0aa;
+
+  --action-time: cubic-bezier(0.4, 0, 0.2, 1);
+  --action-total-time: 250ms;
 }
 
 /* Standard Body CSS */
@@ -502,6 +505,33 @@ button {
   line-height: 1.88;
   letter-spacing: 0.03em;
   color: var(--navyblue);
+}
+
+.overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-link:hover .overlay-text,
+.portfolio-link:focus .overlay-text {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+.overlay-text {
+  position: absolute;
+  background-color: var(--iris);
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  padding: 63px 24px;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: var(--white);
 }
 
 /* footer */
