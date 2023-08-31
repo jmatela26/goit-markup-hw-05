@@ -252,6 +252,13 @@ button {
   background-position: center;
 }
 
+.feature-items.list.feature-icon-antenna:hover::before,
+.feature-items.list.feature-icon-clock:hover::before,
+.feature-items.list.feature-icon-diagram:hover::before,
+.feature-items.list.feature-icon-astronaut:hover::before {
+  animation: rotateY 250ms ease-out;
+}
+
 .feature-items.list.feature-icon-antenna::before {
   background-image: url(../images/antenna.svg);
 }
@@ -649,4 +656,14 @@ footer .logo-span {
   border-radius: 50%;
   text-align: center;
   cursor: pointer;
+}
+
+@keyframes rotateY {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    transform: rotateY(360deg);
+  }
 }
