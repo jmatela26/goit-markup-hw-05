@@ -9,7 +9,7 @@
   --iconcolor: #afb1b8;
   --green: #31d0aa;
 
-  --action-time: cubic-bezier(0.4, 0, 0.2, 1);
+  --time-transition: cubic-bezier(0.4, 0, 0.2, 1);
   --action-total-time: 250ms;
 }
 
@@ -162,6 +162,7 @@ button {
 .address-links:hover,
 .address-links:focus {
   color: var(--iris);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .section {
@@ -207,6 +208,7 @@ button {
 .hero-button:hover {
   background-color: var(--ocean);
   color: var(--white);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .feature-section-list {
@@ -356,6 +358,7 @@ button {
 .team-social-media-link:hover,
 .team-social-media-link:focus {
   background-color: var(--ocean);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-social-media-icon-svg {
@@ -390,11 +393,13 @@ button {
 .client-link:focus {
   fill: var(--iris);
   border-color: var(--iris);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-link:hover svg, 
 .client-link:focus svg {
   fill: var(--iris);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-section-title {
@@ -444,7 +449,7 @@ button {
 .btn-filter:focus {
   background-color: var(--iris);
   color: var(--white);
-
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -466,6 +471,7 @@ button {
 .portfolio-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-items-list {
@@ -507,6 +513,7 @@ button {
   color: var(--navyblue);
 }
 
+/* overlay css for portfolio */
 .overlay {
   position: relative;
   overflow: hidden;
@@ -515,7 +522,7 @@ button {
 .portfolio-link:hover .overlay-text,
 .portfolio-link:focus .overlay-text {
   transform: translateY(0%);
-  opacity: 1;
+  opacity: 95%;
 }
 
 .overlay-text {
@@ -526,7 +533,7 @@ button {
   bottom: 0;
   transform: translateY(100%);
   opacity: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   padding: 63px 24px;
   font-size: 18px;
   line-height: 1.56;
@@ -577,6 +584,7 @@ button {
 .social-media-link:focus {
   color: var(--white);
   background-color: var(--green);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-link {
@@ -586,4 +594,59 @@ button {
 
 footer .logo-span {
   color: var(--white);
+}
+
+/* backdrop modal */
+.backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  transform: scale(100%);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: scale(0%);
+}
+
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 500px;
+  height: 584px;
+  transform: translate(-50%, -50%);
+
+  background-color: var(--white);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.btn-modal {
+  position: absolute;
+  top: 16px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  font-size: 25px;
+
+  background-color: var(--cornflower);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
 }
