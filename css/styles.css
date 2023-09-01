@@ -8,9 +8,6 @@
   --grey: rgba(46, 47, 66, 0.70);
   --iconcolor: #afb1b8;
   --green: #31d0aa;
-
-  --time-transition: cubic-bezier(0.4, 0, 0.2, 1);
-  --action-total-time: 250ms;
 }
 
 /* Standard Body CSS */
@@ -250,13 +247,6 @@ button {
   background-repeat: no-repeat;
   background-color: var(--cloud);
   background-position: center;
-}
-
-.feature-items.list.feature-icon-antenna:hover::before,
-.feature-items.list.feature-icon-clock:hover::before,
-.feature-items.list.feature-icon-diagram:hover::before,
-.feature-items.list.feature-icon-astronaut:hover::before {
-  animation: rotateY 250ms ease-out;
 }
 
 .feature-items.list.feature-icon-antenna::before {
@@ -652,14 +642,4 @@ footer .logo-span {
   border-radius: 50%;
   text-align: center;
   cursor: pointer;
-}
-
-@keyframes rotateY {
-  0% {
-    transform: rotateY(0deg);
-  }
-
-  100% {
-    transform: rotateY(360deg);
-  }
 }
